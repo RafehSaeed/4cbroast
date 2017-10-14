@@ -1,0 +1,76 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="4c.css" type="text/css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" type="text/css">
+    <link rel="stylesheet" href="animate.css" type="text/css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
+    <script src="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-alpha.6.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-route/angular-route.min.js"></script>
+    <script src="app.js"></script>
+    <script src="Factories/MenuFactory.js"></script>
+    <script src="Services/authentication.service.js"></script>
+    <script src="Controllers/MainController.js"></script>
+    <script src="Controllers/loginCtrl.js"></script>
+    <script src="Controllers/AdminController.js"></script>
+    <script src="Controllers/registerCtrl.js"></script>
+  </head>
+
+
+
+  <body ng-app="4cbroast">
+    <nav class="navbar navbar-expand-md navbar-light bg-faded text-center">
+      <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar2SupportedContent" aria-controls="navbar2SupportedContent" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> </button>
+        <div class="collapse navbar-collapse text-center justify-content-center" id="navbar2SupportedContent">
+
+          <li class="nav-social">
+            <div class="nav-socialpos  ">
+              <i class="fa fa-facebook fa-fw" style="font-size:24px"></i>
+              <i class="fa fa-instagram fa-fw" style="font-size:24px"></i>
+              <i class="fa fa-twitter fa-fw" style="font-size:24px"></i> 
+            </div>
+          </li>
+
+          <ul class="navbar-nav"  ng-controller="AdminController">
+            <li class="nav-item ">
+              <a class="nav-link" href="#!/home">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/menu">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#!/locations">Locations</a>
+            </li>
+          </ul>
+
+          <ul ng-show="loggedin " class="navbar-nav" ng-controller="AdminController">
+            <li class="nav-item">
+              <div class="profile-info-div profile-info">
+                <b><a href="">Welcome:&nbsp;{{user3.name}}!</a></b>
+                <a href="" ng-click="logout()"><img src="logout.png" class="logoutbutton" alt="logout"></a>
+              </ul>
+
+            </div>
+          </li>
+        </div>
+      </div>
+    </nav>
+    <div class="animated fadein" ng-view> <!--Rendering of Templates is performed here-->
+    
+  </div>
+  <div class="py-5 section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          
+          <p ng-controller="MainController" ng-cloak class="animated infinite float"><a href="" onclick="history.back()"><img src="menubutton.png" class="menubutton" ng-show="loaded"  alt="menu button"></a> </div><p>
+        </div>
+      </div>
+    </div>
+    
+  </body>
+</html>

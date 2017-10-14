@@ -1,0 +1,38 @@
+<div class="py-5 section text-center" >
+  <div class="container" >
+    <div class="row">
+      <div class="col-md-12" >
+        <h2>Menu</h2>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="py-5 section ">
+  <div class="container glass menutemplate" >
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row "  >
+          <ul style="width:20%; float:left;list-style-type: none;">
+            <li>  <h4>Item</h4></li>
+          </ul>
+          <ul style="width:20%; float:left;  list-style-type: none;">
+            <li><h4>Price</h4></li>
+          </ul>
+          <ul style="width:30%; float:left;  list-style-type: none;">
+            <li><h4>Description</h4></li>
+          </ul>
+        </div><div class="row" ng-repeat="item in menuitems" >
+        <ul style="width:20%; float:left;">
+          <li>  <loginlabelfont>{{item.name}}</loginlabelfont></li>
+        </ul>
+        <ul style="width:20%; float:left;  list-style-type: none;">
+          <li><loginlabelfont>{{item.price|currency}}</loginlabelfont></li>
+        </ul>
+        <ul style="width:30%; float:left;  list-style-type: none;">
+          <li><loginlabelfont>{{item.description}}</loginlabelfont></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
